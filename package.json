@@ -7,6 +7,7 @@
     "start": "webpack-dev-server --open --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js"
   },
+  "homepage": "https://killweb.github.io/webpack_study/",
   "keywords": [],
   "author": "yibo.wei",
   "license": "ISC",
