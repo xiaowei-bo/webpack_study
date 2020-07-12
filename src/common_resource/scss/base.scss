@@ -1,0 +1,38 @@
+@charset "utf-8";
+@import "src/common_resource/scss/adaptation";
+@import "src/common_resource/scss/function";
+
+html,body { width: 100%; min-height: 100%; font-size: 16px; }
+html, body, form, p, h1, h2, h3, h4, h5, h6, dl, ul, ol, li, dt, dd, select { margin: 0; padding: 0; }
+ul, ol, li { list-style-type: none; }
+a { color: #000000; text-decoration: none; }
+i { font-style: normal; }
+button { outline: none; border: none; background: none; }
+
+
+
+
+.fl { float: left; }
+.fr { float: right; }
+.clearfix {
+    zoom: 1;
+    &::before {
+        content: "";
+        display: table;
+    }
+    &::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+.common-input {
+    display: inline-block;
+    width: px2rem(350);
+    height: px2rem(60);
+    padding-left: px2rem(10);
+    background-color: transparent;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #999999;
+}
