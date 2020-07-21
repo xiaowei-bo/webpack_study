@@ -64,13 +64,37 @@ function remHandler(designWidth = 750) {
         window.addEventListener('resize', handler, false);
     },200);
 }
+/**
+ * @param {String} text
+ * @description 简易百度 TTS 文本转语音朗读
+ */
+function bdAudio(text) {
+    const baseUrl = "http://tts.baidu.com/text2audio/text2audio?lan=zh&ie=UTF-8&spd=5&text=";
+    let audio = document.getElementById('bd_audio') || null;
+    if(audio) {
+        console.log(audio.src);
+        if(audio.src !== `${baseUrl}${text}`) {
+            audio.src = `${baseUrl}${text}`;
+        }
+        audio.paused && audio.play && audio.play();
+    } else {
+        audio = document.createElement('audio');
+        audio.id = 'bd_audio';
+        audio.src = `${baseUrl}${text}`;
+        document.body.appendChild(audio);
+        audio.addEventListener('canplay', () => {
+            audio.paused && audio.play && audio.play();
+        });
+    }
+}
 
 const dog = {
     osInfo,
     loadingFun,
     listenBack,
     reOpenScreen,
-    remHandler
+    remHandler,
+    bdAudio
 };
 $.extend(window, {
     dog: dog

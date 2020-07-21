@@ -3,7 +3,7 @@
         type="tel"
         pattern="[0-9]*"
         maxlength="13"
-        class="common-input phone-input"
+        class="common_input phone_input"
         v-model="phone"
         :placeholder="placeholder"
         :autofocus="autofocus"
