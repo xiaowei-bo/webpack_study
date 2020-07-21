@@ -22,16 +22,6 @@ let config = {
         filename: 'src/[name]/index.js',
         path: path.resolve(__dirname, 'dist'),
     },
-    /*optimization: {
-        splitChunks: {
-            cacheGroups: {
-                default: {
-                    name: 'common',
-                    chunks: 'initial'
-                }
-            }
-        }
-    },*/
     resolve: {
         extensions: [".js", '.ts', 'tsx', ".vue"],
         modules: ["./node_modules"],
@@ -111,8 +101,7 @@ function addEntry () {
 
 let common_js_entry = {
     dog: path.resolve(__dirname, 'src', 'common_resource','js','common.js'),
-    page_load: path.resolve(__dirname,'src','common_resource','js','page_load.js'),
-    page_list: path.resolve(__dirname,'src','common_resource','page_list','index.js')
+    page_load: path.resolve(__dirname,'src','common_resource','js','page_load.js')
 };
 config.entry = Object.assign(common_js_entry,addEntry());
 
@@ -124,7 +113,7 @@ getPathName("./src/pages").forEach( pathName => {
     let htmlFileList = fs.readdirSync("./src/pages/" + pathName + "/views");
     htmlFileList.forEach(inner_fileName => {
         let conf = {
-            filename: path.join('views', pathName,inner_fileName),
+            filename: path.join('views',pathName,inner_fileName),
             template: path.join(__dirname, 'src/pages', pathName, 'views', inner_fileName),
             chunks: ['page_load','dog',pathName],
             inject: 'body',
@@ -135,17 +124,5 @@ getPathName("./src/pages").forEach( pathName => {
         config.plugins.push(new HtmlWebpackPlugin(conf));
     })
 });
-
-// 生成一个项目初始页面
-let indexConf = {
-    filename: path.join('index.html'),
-    template: path.join(__dirname, 'src', 'common_resource', 'page_list', 'index.html'),
-    chunks: ['page_list'],
-    favicon: path.resolve(__dirname, 'src', 'common_resource', 'images', 'favicon.png'),
-    hash: true,
-    minify: true
-};
-config.plugins.push(new HtmlWebpackPlugin(indexConf));
-
 
 module.exports = config;

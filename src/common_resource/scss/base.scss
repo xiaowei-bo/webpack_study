@@ -1,5 +1,4 @@
 @charset "utf-8";
-@import "src/common_resource/scss/adaptation";
 @import "src/common_resource/scss/function";
 
 html,body { width: 100%; min-height: 100%; font-size: 16px; }
@@ -28,9 +27,9 @@ button { outline: none; border: none; background: none; }
 }
 .common-input {
     display: inline-block;
-    width: px2rem(350);
-    height: px2rem(60);
-    padding-left: px2rem(10);
+    width: _px(350);
+    height: _px(60);
+    padding-left: _px(10);
     background-color: transparent;
     border: none;
     outline: none;
