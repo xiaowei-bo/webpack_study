@@ -3,6 +3,8 @@
  */
 
 import { loadingFun } from "../components/loading";
+import { dom2pdf } from "./dom2pdf";
+import { pullRefresh } from "./pullRefresh";
 
 /**
  * @description 基础信息打印
@@ -23,7 +25,7 @@ function osInfo() {
 }
 
 /**
- * @param {Function} callback 
+ * @param {Function} callback
  * @description 监听页面返回状态 && 部分机型需搭配 reOpenScreen 使用
  */
 function listenBack(callback) {
@@ -35,7 +37,7 @@ function listenBack(callback) {
 }
 
 /**
- * @param {Function} callback 
+ * @param {Function} callback
  * @description 监听屏幕再次显示，移动端切后台或锁屏再次进入页面
  */
 function reOpenScreen(callback) {
@@ -94,8 +96,10 @@ const dog = {
     listenBack,
     reOpenScreen,
     remHandler,
-    bdAudio
+    bdAudio,
+    pullRefresh,
+    dom2pdf
 };
 $.extend(window, {
     dog: dog
-})
+});
