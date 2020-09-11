@@ -16,10 +16,13 @@ let config = {
             axios: 'axios',
             $: 'jquery',
             jQuery: 'jquery'
+        }),
+        new webpack.DefinePlugin({
+            ENV: JSON.stringify(process.env.NODE_ENV) //字符串
         })
     ],
     output: {
-        filename: 'src/[name]/index.js',
+        filename: 'src/[name]/index_[hash:8].js',
         path: path.resolve(__dirname, 'dist'),
     },
     resolve: {
@@ -32,11 +35,11 @@ let config = {
     },
     module: {
         rules: [
-            {
+            { // vue 文件处理
                 test: /\.vue$/,
                 loader: 'vue-loader'
             },
-            {
+            { // js文件向下兼容
                 test: /\.js$/,
                 loader: 'babel-loader',
                 exclude: file => (
@@ -44,7 +47,7 @@ let config = {
                     !/\.vue\.js/.test(file)
                 )
             },
-            {
+            { // ts文件处理
                 test: /\.tsx?$/,
                 loader: 'ts-loader',
                 exclude: file => (
@@ -55,22 +58,44 @@ let config = {
                     appendTsSuffixTo: [/\.vue$/],
                 }
             },
-            {
-                test: /\.css$/,
+            { // scss文件处理
+                test: /\.(sa|sc|c)ss$/,
                 use: [
-                  'vue-style-loader',
-                  'css-loader'
+                    'style-loader',
+                    'vue-style-loader',
+                    'css-loader',
+                    'sass-loader'
                 ]
             },
-            {
-                test: /\.scss$/,
+            { // 图片文件处理
+                test: /\.(png|jpg|gif|jpeg|webp|svg|eot|ttf|woff|woff2)$/,
                 use: [
-                  'vue-style-loader',
-                  'css-loader',
-                  'sass-loader'
-                ]
-            }
+                    {
+                        loader: 'url-loader',
+                        options: {
+                            limit: 10240, //10K
+                            esModule: false,
+                            name: '[name]_[hash:6].[ext]'
+                        }
+                    }
+                ],
+                exclude: /node_modules/
+            },
+            // { // html中图片文件处理 ！！！使用此插件不方便使用ejs模板
+            //     test: /.html$/,
+            //     use: 'html-withimg-loader'
+            // }
         ]
+    },
+    devServer: {
+        proxy: {
+            '/api': {
+                target: 'target_url',
+                pathRewrite: {
+                    '/api': ''
+                }
+            }
+        }
     }
 };
 

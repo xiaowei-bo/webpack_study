@@ -2,9 +2,11 @@ const path = require('path');
 const webpack = require('webpack');
 const merge = require('webpack-merge');
 const common = require('./webpack.common.js');
+const SpeedMeasurePlugin = require("speed-measure-webpack-plugin");
+const smp = new SpeedMeasurePlugin();
 
 
-module.exports = merge(common, {
+const config = merge(common, {
     devtool: 'inline-source-map',
     devServer: {
         contentBase: path.resolve(__dirname, 'dist'),
@@ -22,3 +24,5 @@ module.exports = merge(common, {
         new webpack.HotModuleReplacementPlugin()
     ]
 });
+
+module.exports = smp.wrap(config);

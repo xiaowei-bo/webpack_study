@@ -1,5 +1,6 @@
 <template>
     <div class="rem_demo" ref="pdfDom">
+        <img src="./images/logo.png" alt="">
         <p>我是第零段文章我是第零段文章我是第零段文章我是第零段文章pppp</p>
         <p class="pdf_item">我是第一段文章</p>
         <p class="pdf_item">我是第一段文章</p>
@@ -88,6 +89,9 @@ export default {
         downPdf() {
             dog.dom2pdf(this.$refs.pdfDom, 'pdf_item');
         }
+    },
+    created() {
+        console.log(ENV)
     }
 }
 </script>
