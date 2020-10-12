@@ -10,6 +10,6 @@ import '../scss/base.scss';
 dog.remHandler();
 dog.osInfo();
 window.onload = function() {
-    dog.pullRefresh();
+    dog.pullRefresh().init();
 };
 

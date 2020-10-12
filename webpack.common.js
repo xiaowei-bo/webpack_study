@@ -96,6 +96,30 @@ let config = {
                 }
             }
         }
+    },
+    optimization: {
+        concatenateModules: false,
+        splitChunks: { //分割代码块
+            maxInitialRequests: 6, // 默认是5
+            chunks: 'initial',
+            cacheGroups: {
+                vendor: {
+                    // 第三方依赖
+                    priority: 2,
+                    name: 'vendor',
+                    test: /node_modules/,
+                    minChunks: 1, //重复引入了几次
+                    reuseExistingChunk: true
+                },
+                vue: {
+                    name: "vue",
+                    priority: 2, // 权重需大于`vendor`
+                    test: /[\/]node_modules[\/]vue[\/]/,
+                    minChunks: 1, //重复引入了几次
+                    reuseExistingChunk: true,
+                }
+            }
+        },
     }
 };
 
