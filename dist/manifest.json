@@ -1,0 +1,22 @@
+{
+  "vendor.js": "src/vendor/index_9015f53b.js",
+  "ai_voice.js": "src/ai_voice/index_9015f53b.js",
+  "dog.js": "src/dog/index_9015f53b.js",
+  "map.js": "src/map/index_9015f53b.js",
+  "page_load.js": "src/page_load/index_9015f53b.js",
+  "rem_demo.js": "src/rem_demo/index_9015f53b.js",
+  "ts_study.js": "src/ts_study/index_9015f53b.js",
+  "vue_three.js": "src/vue_three/index_9015f53b.js",
+  "src/8/index_9015f53b.js": "src/8/index_9015f53b.js",
+  "src/9/index_9015f53b.js": "src/9/index_9015f53b.js",
+  "favicon.png": "favicon.png",
+  "logo.png": "logo_c83eb9.png",
+  "views/ai_voice/edit.html": "views/ai_voice/edit.html",
+  "views/ai_voice/index.html": "views/ai_voice/index.html",
+  "views/map/china.html": "views/map/china.html",
+  "views/map/world.html": "views/map/world.html",
+  "views/rem_demo/index.html": "views/rem_demo/index.html",
+  "views/ts_study/index.html": "views/ts_study/index.html",
+  "views/vue_three/index.html": "views/vue_three/index.html",
+  "views/vue_three/test.html": "views/vue_three/test.html"
+}
