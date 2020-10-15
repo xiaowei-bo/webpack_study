@@ -23,7 +23,7 @@ let config = {
     ],
     output: {
         filename: 'src/[name]/index_[hash:8].js',
-        path: path.resolve(__dirname, 'dist'),
+        path: path.resolve(__dirname, 'docs/dist'),
     },
     resolve: {
         extensions: [".js", '.ts', 'tsx', ".vue"],
