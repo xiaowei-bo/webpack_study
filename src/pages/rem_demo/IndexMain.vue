@@ -11,12 +11,6 @@
         <p class="pdf_item">我是第一段文章</p>
         <p class="pdf_item">我是第一段文章</p>
         <p class="pdf_item">我是第一段文章</p>
-        <p class="pdf_item">我是第一段文章</p>
-        <p class="pdf_item">我是第一段文章</p>
-        <p class="pdf_item">我是第一段文章</p>
-        <p class="pdf_item">我是第一段文章</p>
-        <p class="pdf_item">我是第一段文章</p>
-        <p class="pdf_item">我是第一段文章</p>
         <phone-input></phone-input>
         <p class="pdf_item">我是第一段文章</p>
         <p class="pdf_item">我是第一段文章</p>
