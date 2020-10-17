@@ -1,6 +1,7 @@
 <template>
 	<div class="ai_voice">
 		<input type="text" class="common_input" placeholder="请输入" v-model="message">
+		<p>feguu</p>
 		<button class="common_btn" @click="playAudio">OOp</button>
 	</div>
 </template>
