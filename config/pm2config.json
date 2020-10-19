@@ -1,0 +1,15 @@
+{
+    "apps": {
+        "name": "myLife",                           // 项目名
+        "script": "./webpack_study/service/app.js", // 执行文件
+        "cwd": "../",                               // 根目录
+        "exec_mode": "cluster_mode",                // 应用启动模式，支持fork和cluster模式
+        "instances": 4,                             // 应用启动实例个数，仅在cluster模式有效 默认为fork；或者 max
+        "max_memory_restart": 8,                    // 最大内存限制数，超出自动重启
+        "error_file": "./logs/app-err.log",         // 错误日志文件
+        "out_file": "./logs/app-out.log",           // 正常日志文件
+        "merge_logs": true,                         // 设置追加日志而不是新建日志
+        "log_date_format": "YYYY-MM-DD HH:mm:ss",   // 指定日志文件的时间格式
+        "autorestart": true                         // 默认为true, 发生异常的情况下自动重启
+    }
+}

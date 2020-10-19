@@ -1,9 +1,0 @@
-{
-  "vendor.js": "src/vendor/index_64d47bf7.js",
-  "ai_voice.js": "src/ai_voice/index_64d47bf7.js",
-  "dog.js": "src/dog/index_64d47bf7.js",
-  "page_load.js": "src/page_load/index_64d47bf7.js",
-  "favicon.png": "favicon.png",
-  "views/ai_voice/edit.html": "views/ai_voice/edit.html",
-  "views/ai_voice/index.html": "views/ai_voice/index.html"
-}

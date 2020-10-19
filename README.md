@@ -1,1 +1,3 @@
-https://killweb.github.io/webpack_study/dist/views/vue_three/index.html
+https://hwq1114.club/views/mylife/ai_voice/index.paper
+
+部署命令 npm run deployer
