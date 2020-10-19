@@ -12,10 +12,7 @@ let config = {
         new ManifestPlugin(),
         new VueLoaderPlugin(),
         new webpack.ProvidePlugin({
-            Vue: 'vue/dist/vue.esm.js',
-            axios: 'axios',
-            $: 'jquery',
-            jQuery: 'jquery'
+            Vue: 'vue/dist/vue.esm.js'
         }),
         new webpack.DefinePlugin({
             ENV: JSON.stringify(process.env.NODE_ENV) //字符串
@@ -26,7 +23,7 @@ let config = {
         path: path.resolve(__dirname, 'docs/dist'),
     },
     resolve: {
-        extensions: [".js", '.ts', 'tsx', ".vue"],
+        extensions: [".js", ".vue"],
         modules: ["./node_modules"],
         alias: {
             '@': path.resolve(__dirname, 'src','common_resource'),
@@ -46,17 +43,6 @@ let config = {
                     /node_modules/.test(file) &&
                     !/\.vue\.js/.test(file)
                 )
-            },
-            { // ts文件处理
-                test: /\.tsx?$/,
-                loader: 'ts-loader',
-                exclude: file => (
-                    /node_modules/.test(file) &&
-                    !/\.vue\.ts/.test(file)
-                ),
-                options: {
-                    appendTsSuffixTo: [/\.vue$/],
-                }
             },
             { // scss文件处理
                 test: /\.(sa|sc|c)ss$/,
@@ -80,11 +66,7 @@ let config = {
                     }
                 ],
                 exclude: /node_modules/
-            },
-            // { // html中图片文件处理 ！！！使用此插件不方便使用ejs模板
-            //     test: /.html$/,
-            //     use: 'html-withimg-loader'
-            // }
+            }
         ]
     },
     devServer: {

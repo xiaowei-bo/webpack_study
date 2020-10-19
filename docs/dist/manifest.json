@@ -1,22 +1,9 @@
 {
-  "vendor.js": "src/vendor/index_b5e2db2c.js",
-  "ai_voice.js": "src/ai_voice/index_b5e2db2c.js",
-  "dog.js": "src/dog/index_b5e2db2c.js",
-  "map.js": "src/map/index_b5e2db2c.js",
-  "page_load.js": "src/page_load/index_b5e2db2c.js",
-  "rem_demo.js": "src/rem_demo/index_b5e2db2c.js",
-  "ts_study.js": "src/ts_study/index_b5e2db2c.js",
-  "vue_three.js": "src/vue_three/index_b5e2db2c.js",
-  "src/8/index_b5e2db2c.js": "src/8/index_b5e2db2c.js",
-  "src/9/index_b5e2db2c.js": "src/9/index_b5e2db2c.js",
+  "vendor.js": "src/vendor/index_64d47bf7.js",
+  "ai_voice.js": "src/ai_voice/index_64d47bf7.js",
+  "dog.js": "src/dog/index_64d47bf7.js",
+  "page_load.js": "src/page_load/index_64d47bf7.js",
   "favicon.png": "favicon.png",
-  "logo.png": "logo_c83eb9.png",
   "views/ai_voice/edit.html": "views/ai_voice/edit.html",
-  "views/ai_voice/index.html": "views/ai_voice/index.html",
-  "views/map/china.html": "views/map/china.html",
-  "views/map/world.html": "views/map/world.html",
-  "views/rem_demo/index.html": "views/rem_demo/index.html",
-  "views/ts_study/index.html": "views/ts_study/index.html",
-  "views/vue_three/index.html": "views/vue_three/index.html",
-  "views/vue_three/test.html": "views/vue_three/test.html"
+  "views/ai_voice/index.html": "views/ai_voice/index.html"
 }

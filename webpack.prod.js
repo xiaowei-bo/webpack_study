@@ -9,9 +9,6 @@ const config = merge(common, {
     mode: "production",
     plugins: [
         new CleanWebpackPlugin()
-        // new webpack.DefinePlugin({
-        //     'process.env.NODE_ENV': JSON.stringify('production')
-        // })
     ]
 });
 

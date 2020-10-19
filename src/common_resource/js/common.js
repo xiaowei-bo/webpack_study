@@ -3,7 +3,6 @@
  */
 
 import { loadingFun } from "../components/loading";
-import { dom2pdf } from "./dom2pdf";
 import { pullRefresh } from "./pullRefresh";
 
 /**
@@ -97,8 +96,7 @@ const dog = {
     reOpenScreen,
     remHandler,
     bdAudio,
-    pullRefresh,
-    dom2pdf
+    pullRefresh
 };
 $.extend(window, {
     dog: dog
