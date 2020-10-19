@@ -1,6 +1,6 @@
 git pull
 
-npm i
+cnpm i
 
 npm run build
 
