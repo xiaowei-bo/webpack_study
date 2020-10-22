@@ -9,7 +9,7 @@
     "build": "cross-env NODE_ENV=production webpack --config webpack.prod.js",
     "deployer": "sh config/start.sh"
   },
-  "homepage": "https://killweb.github.io/webpack_study/",
+  "homepage": "https://hwq1114.club/views/mylife/ai_voice/index.paper",
   "keywords": [],
   "author": "yibo.wei",
   "license": "ISC",
