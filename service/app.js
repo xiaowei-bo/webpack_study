@@ -13,11 +13,3 @@ router(app);
 app.listen(8848, () => {
    console.log(`Serve is running at: http://localhost:8848`);
 });
-// const Koa = require('koa');
-// const app = new Koa();
-//
-// app.use(async ctx => {
-//     ctx.body = 'Hello World';
-// });
-//
-// app.listen(3000);
