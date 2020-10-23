@@ -1,8 +1,8 @@
 current_path="$PWD"
 
-cd ${current_path}/runtime
-
 cnpm i
+
+echo "$current_path"
 
 if [ "$(pm2 id myLife)" = "[]" ]; then
     pm2 start ${current_path}/config/pm2config.json
