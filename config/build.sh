@@ -24,7 +24,7 @@ fi
 
 rsync -rtvlpgozDP --delete \
 $current_path/config \
-$current_path/docs \
+$current_path/dist \
 $current_path/service \
 $current_path/package.json \
 $current_path/runtime
