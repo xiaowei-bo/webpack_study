@@ -4,11 +4,11 @@ const glob = require('glob');
 const path = require('path');
 
 module.exports = (app) => {
-    const htmlFiles = glob.sync('docs/dist/**/*.html');
+    const htmlFiles = glob.sync('dist/**/*.html');
     console.log(htmlFiles);
     htmlFiles.forEach((item) => {
-        const html = item.replace('docs/dist/', '');
-        const url = item.replace('docs/dist/views', '').replace('.html', '.paper');
+        const html = item.replace('dist/', '');
+        const url = item.replace('dist/views', '').replace('.html', '.paper');
         console.log(url);
         router.get(url, async (ctx, next) => {
             await ctx.render(path.join(html));

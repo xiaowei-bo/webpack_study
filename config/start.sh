@@ -1,21 +1,8 @@
 current_path="$PWD"
-git pull
-if [ $? -ne 0 ]; then
-    echo "git pull failed";
-    exit 1;
-fi
+
+cd ${current_path}/runtime
 
 cnpm i
-if [ $? -ne 0 ]; then
-    echo "npm install failed";
-    exit 1;
-fi
-
-npm run build
-if [ $? -ne 0 ]; then
-    echo "build failed";
-    exit 1;
-fi
 
 if [ "$(pm2 id myLife)" = "[]" ]; then
     pm2 start ${current_path}/config/pm2config.json

@@ -5,8 +5,8 @@ const KoaViews = require('koa-views');
 const app = new Koa();
 
 const Serve = require('koa-static');
-app.use(Serve(path.join(__dirname, '../docs/dist')));
-app.use(KoaViews(path.join(__dirname, '../docs/dist')));
+app.use(Serve(path.join(__dirname, '../dist')));
+app.use(KoaViews(path.join(__dirname, '../dist')));
 const router = require('./router.js');
 router(app);
 

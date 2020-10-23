@@ -2,3 +2,6 @@
 /.idea/
 /.github/
 /docs/
+/runtime/
+/logs/
+/dist/
