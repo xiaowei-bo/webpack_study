@@ -109,6 +109,7 @@ let config = {
  * 获取开发目录 src/pages 下所有目录文件名
  */
 function getPathName (path) {
+    
     let entries = fs.readdirSync(path);
     return entries;
 }
