@@ -4,7 +4,7 @@
  * 有效下拉：指页面被下拉至文档顶部离开视口顶部
  * 暂不支持 微信等 q系浏览器
  * @使用方法
- *     const pullObj = Tools.pullRefresh(() => {
+ *     const pullObj = dog.pullRefresh(() => {
  *         // 刷数据接口
  *         // 刷新完成之后调用 pullObj.finish(); 顶部刷新区归位
  *     });
@@ -29,7 +29,7 @@ export function pullRefresh(pullCallback) {
         return !!ua.match(/mqqbrowser|qzone|qqbrowser/i);
     };
     const finish = () => {
-        if(isQBrowser() || Tools.isWechatBrowser()) return;
+        if(isQBrowser()) return;
         loadImg.style.opacity = 0;
         loadText.innerText = '刷新成功';
         setTimeout(() => {
@@ -42,7 +42,7 @@ export function pullRefresh(pullCallback) {
         }, 500);
     };
     const init = () => {
-        if(isQBrowser() || Tools.isWechatBrowser()) return;
+        if(isQBrowser()) return;
         body.appendChild(pullTextEl);
         pullTextEl.appendChild(loadImg);
         pullTextEl.appendChild(loadText);

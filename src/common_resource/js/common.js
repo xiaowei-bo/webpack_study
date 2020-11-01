@@ -98,6 +98,4 @@ const dog = {
     bdAudio,
     pullRefresh
 };
-$.extend(window, {
-    dog: dog
-});
+window.dog = dog;
