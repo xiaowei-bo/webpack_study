@@ -18,7 +18,6 @@
 		<p>jhefuiehi</p>
 		<p>jhefuiehi</p>
 		<p>jhefuiehi</p>
-		<p>jhefuiehi</p>
 		<button class="common_btn" @click="playAudio">OOp</button>
 	</div>
 </template>
