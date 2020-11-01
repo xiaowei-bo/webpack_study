@@ -17,7 +17,7 @@ module.exports = (app) => {
     });
 
     router.get('/', async (ctx, next) => {
-        ctx.body = `node 服务已启动${JSON.stringify(htmlFiles)}`;
+        ctx.body = `Node start by jenkins deployer!${JSON.stringify(htmlFiles)}`;
         next();
     });
     app.use(router.routes()).use(router.allowedMethods());
