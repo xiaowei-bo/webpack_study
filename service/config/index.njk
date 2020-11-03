@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>页面列表页</title>
+    <style>
+        #page{
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .project-item {
+            text-decoration: none;
+            padding: 10px;
+            border-radius: 10px;
+            border: 1px solid #ebeef5;
+            margin: 10px;
+            min-height: 80px;
+            width: 250px;
+            cursor: pointer;
+            color: #6a7180;
+        }
+        h3{
+            font-size: 24px;
+        }
+        #desc{
+            color: grey;
+            font-size: 14px;
+        }
+        a{
+            color: #6a7180;
+            display: block;
+            padding: 5px 5px 5px 50px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        a:hover{
+            color: #6b14c7;
+        }
+        .project-item:hover {
+            /*background-color: #eee;*/
+            box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);
+        }
+        #src{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<h3>MY LIFE 项目</h3>
+<p id="desc"></p>
+<div id="src">
+    {% for item in routerList %}
+        <a href="{{ item }}" target="_blank">{{ item }}</a>
+    {% endfor %}
+</div>
+<div id="page"></div>
+</body>
+<script type="text/javascript">
+    // 处理一下页面，以项目为块
+    window.onload = function () {
+        const page = document.getElementById('page');
+        const srcWrap = document.getElementById('src');
+        const srcList = [];
+        const aElList = srcWrap.getElementsByTagName('a');
+        for (let aEl of aElList) {
+            srcList.push(aEl.innerText);
+        }
+        const pageList = [];
+        srcList.forEach((item) => {
+            const arr = item.split('/');
+            const obj = {
+                parent: arr[0],
+                child: (function () {
+                    let _child = '';
+                    arr.forEach((item, index) => {
+                        if(index !== 0) {
+                            _child += `${item}${index === arr.length - 1 ? '' : '/'}`
+                        }
+                    });
+                    return _child;
+                })()
+            };
+            pageList.push(obj);
+        });
+        const projectObj = {};
+        pageList.forEach((item) => {
+            if(!projectObj[item.parent]) {
+                projectObj[item.parent] = [item.child];
+            } else {
+                projectObj[item.parent].push(item.child);
+            }
+        })
+        const descEl = document.getElementById('desc');
+        const projectNum = Object.keys(projectObj).length;
+        const pageNum = srcList.length;
+        descEl.innerText = `当前项目总计 ${ projectNum } 个；   当前页面总计 ${ pageNum } 个`;
+        for (let project in projectObj) {
+            const El = document.createElement('div');
+            El.className = 'project-item';
+            El.id = project;
+            const title = document.createElement('span');
+            title.innerText = project;
+            title.className = 'pi-title';
+            El.appendChild(title);
+            if(projectObj[project]) {
+                projectObj[project].forEach((item) => {
+                    const aEl = document.createElement('a');
+                    aEl.href = project + '/' + item;
+                    aEl.target = '_blank';
+                    aEl.innerText = item;
+                    aEl.title = item;
+                    El.appendChild(aEl);
+                })
+            }
+            page.appendChild(El);
+        }
+    }
+</script>
+</html>

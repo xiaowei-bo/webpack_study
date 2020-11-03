@@ -4,12 +4,12 @@ const glob = require('glob');
 const path = require('path');
 
 module.exports = (app) => {
-    const htmlFiles = glob.sync('dist/**/*.html');
-    console.log(htmlFiles);
+    const htmlFiles = glob.sync('dist/**/*.njk');
+    const routerList = [];
     htmlFiles.forEach((item) => {
-        const html = item.replace('dist/', '');
-        const url = item.replace('dist/views', '').replace('.html', '.paper');
-        console.log(url);
+        const html = item.replace('.njk', '');
+        const url = item.replace('dist/views', '').replace('.njk', '.paper');
+        routerList.push(url);
         router.get(url, async (ctx, next) => {
             await ctx.render(path.join(html));
             next();
@@ -17,7 +17,15 @@ module.exports = (app) => {
     });
 
     router.get('/', async (ctx, next) => {
-        ctx.body = `Node start by jenkins deployer!${JSON.stringify(htmlFiles)}`;
+        await ctx.render('service/config/index', { routerList: routerList});
+        next();
+    });
+    router.get('/500.paper', async (ctx, next) => {
+        await ctx.render('service/config/500');
+        next();
+    });
+    router.get('/404.paper', async (ctx, next) => {
+        await ctx.render('service/config/404');
         next();
     });
     app.use(router.routes()).use(router.allowedMethods());

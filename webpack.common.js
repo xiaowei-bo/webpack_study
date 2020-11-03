@@ -32,6 +32,15 @@ let config = {
     },
     module: {
         rules: [
+            {
+                test: /\.html$|njk|nunjucks/,
+                use: ['html-loader',{
+                  loader: 'nunjucks-html-loader',
+                  options : {
+                    searchPaths: ['./client/templates'],
+                  }
+                }]
+            },
             { // vue 文件处理
                 test: /\.vue$/,
                 loader: 'vue-loader'
@@ -141,14 +150,15 @@ config.entry = Object.assign(common_js_entry,addEntry());
  * 每个目录动态生成 html 文件
  */
 getPathName("./src/pages").forEach( pathName => {
-    let htmlFileList = fs.readdirSync("./src/pages/" + pathName + "/views");
+    const htmlFileList = fs.readdirSync("./src/pages/" + pathName + "/views");
+    const favicon = path.resolve(__dirname, 'src', 'common_resource', 'images', 'favicon.png');
     htmlFileList.forEach(inner_fileName => {
         let conf = {
             filename: path.join('views',pathName,inner_fileName),
-            template: path.join(__dirname, 'src/pages', pathName, 'views', inner_fileName),
+            template: `nunjucks-html-loader!${path.join(__dirname, 'src/pages', pathName, 'views', inner_fileName)}`,
             chunks: ['page_load','dog',pathName],
             inject: 'body',
-            favicon: path.resolve(__dirname, 'src', 'common_resource', 'images', 'favicon.png'),
+            favicon: favicon,
             hash: true,
             minify: true
         };

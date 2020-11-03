@@ -16,7 +16,6 @@ export default {
 	},
 	methods: {
 		playAudio() {
-			
 			dog.bdAudio(this.message)
 		}
 	},
