@@ -12,4 +12,3 @@ dog.osInfo();
 window.onload = function() {
     dog.pullRefresh().init();
 };
-

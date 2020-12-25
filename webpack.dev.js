@@ -1,10 +1,11 @@
+const fs = require('fs');
 const path = require('path');
 const webpack = require('webpack');
+const hotMiddlewareScript = 'webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000&reload=true';
 const merge = require('webpack-merge');
 const common = require('./webpack.common.js');
-const SpeedMeasurePlugin = require("speed-measure-webpack-plugin");
-const smp = new SpeedMeasurePlugin();
-
+const chalk = require('chalk');
+const ProgressBarPlugin = require('progress-bar-webpack-plugin');
 
 const config = merge(common, {
     devtool: 'inline-source-map',
@@ -18,8 +19,13 @@ const config = merge(common, {
     },
     mode: "development",
     plugins: [
+        new ProgressBarPlugin({
+            format: ` ٩(๑❛ᴗ❛๑)۶ build [:bar] ${chalk.green.bold(':percent')}  (:elapsed 秒)`,
+            complete: '-',
+            clear: false
+        }),
         new webpack.HotModuleReplacementPlugin()
     ]
 });
 
-module.exports = smp.wrap(config);
+module.exports = config;

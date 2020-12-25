@@ -1,7 +1,7 @@
 <template>
 	<div class="ai_voice">
 		<input type="text" class="common_input" placeholder="请输入" v-model="message">
-		<p>测试github 构建部署</p>
+		<p>测试github 构建jkkkj</p>
 		<p>输入文本，按下按钮</p>
 		<button class="common_btn" @click="playAudio">OOp</button>
 	</div>
@@ -20,6 +20,7 @@ export default {
 		}
 	},
 	created() {
+		console.log('start')
 		console.log('start')
 	}
 }

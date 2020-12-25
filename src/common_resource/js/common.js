@@ -4,6 +4,7 @@
 
 import { loadingFun } from "../components/loading";
 import { pullRefresh } from "./pullRefresh";
+import { getPlatformName } from "./device";
 
 /**
  * @description 基础信息打印
@@ -96,6 +97,7 @@ const dog = {
     reOpenScreen,
     remHandler,
     bdAudio,
-    pullRefresh
+    pullRefresh,
+    getPlatformName
 };
 window.dog = dog;

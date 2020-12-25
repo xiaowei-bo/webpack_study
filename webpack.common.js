@@ -1,9 +1,9 @@
+const fs = require('fs');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const ManifestPlugin = require('webpack-manifest-plugin');
 const webpack = require('webpack');
-const fs = require('fs');
 
 
 let config = {
@@ -144,7 +144,6 @@ let common_js_entry = {
     page_load: path.resolve(__dirname,'src','common_resource','js','page_load.js')
 };
 config.entry = Object.assign(common_js_entry,addEntry());
-
 
 /**
  * 每个目录动态生成 html 文件
