@@ -1,6 +1,12 @@
 ### webpack_study项目
 ==============================
 
+#### 本地开发
+
+    npm start
+    地址：http://localhost:9001/views/ai_voice/index.njk
+    对应线上地址：https://view.hwq1114.club//ai_voice/index.paper
+
 #### 地址
 
     页面地址：https://view.hwq1114.club

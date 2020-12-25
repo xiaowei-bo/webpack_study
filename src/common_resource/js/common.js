@@ -2,7 +2,7 @@
  * 项目公共方法
  */
 
-import { loadingFun } from "../components/loading";
+import { loadingFun } from "../components/Loading/index.js";
 import { pullRefresh } from "./pullRefresh";
 import { getPlatformName } from "./device";
 

@@ -1,4 +1,4 @@
-import Loading from "./Loading.vue";
+import Loading from "./index.vue";
 import Vue from 'vue';
 
 let node = null;
