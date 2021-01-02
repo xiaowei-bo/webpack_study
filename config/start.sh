@@ -4,7 +4,7 @@ cnpm i
 
 echo "$current_path"
 
-if [ "$(pm2 id myLife)" = "[]" ]; then
+if [ "$(pm2 id app)" = "[]" ]; then
     pm2 start service/app.js -i 4
 else
     pm2 reload service/app.js -i 4
