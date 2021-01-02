@@ -17,15 +17,15 @@ module.exports = (app) => {
     });
 
     router.get('/', async (ctx, next) => {
-        await ctx.render('service/config/index', { routerList: routerList});
+        await ctx.render(`${process.cwd()}/service/config/index`, { routerList: routerList});
         next();
     });
     router.get('/500.paper', async (ctx, next) => {
-        await ctx.render('service/config/500');
+        await ctx.render(`${process.cwd()}/service/config/500`);
         next();
     });
     router.get('/404.paper', async (ctx, next) => {
-        await ctx.render('service/config/404');
+        await ctx.render(`${process.cwd()}/service/config/404`);
         next();
     });
     app.use(router.routes()).use(router.allowedMethods());
