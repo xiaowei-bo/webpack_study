@@ -8,7 +8,7 @@ module.exports = (app) => {
     const routerList = [];
     htmlFiles.forEach((item) => {
         const html = item.replace('.njk', '');
-        const url = item.replace('dist/views', '').replace('.njk', '.paper');
+        const url = item.replace('dist', '').replace('.njk', '.paper');
         routerList.push(url);
         router.get(url, async (ctx, next) => {
             await ctx.render(path.join(html));

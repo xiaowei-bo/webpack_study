@@ -150,7 +150,7 @@ getPathName("./src/pages").forEach( pathName => {
     const favicon = path.resolve(__dirname, 'src', 'common_resource', 'images', 'favicon.png');
     htmlFileList.forEach(inner_fileName => {
         let conf = {
-            filename: path.join(pathName,inner_fileName),
+            filename: path.join('views', pathName,inner_fileName),
             template: `nunjucks-html-loader!${path.join(__dirname, 'src/pages', pathName, 'views', inner_fileName)}`,
             chunks: ['dog',pathName],
             inject: 'body',
