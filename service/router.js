@@ -10,23 +10,21 @@ module.exports = (app) => {
         const html = item.replace('.njk', '');
         const url = item.replace('dist', '').replace('.njk', '.paper');
         routerList.push(url);
+        console.log(path.join(html))
         router.get(url, async (ctx, next) => {
             await ctx.render(path.join(html));
-            next();
         });
     });
 
+    console.log(path.resolve(__dirname, './config/index'))
     router.get('/', async (ctx, next) => {
-        await ctx.render(`${process.cwd()}/service/config/index`, { routerList: routerList});
-        next();
+        await ctx.render(path.resolve(__dirname, './config/index'), { routerList: routerList});
     });
     router.get('/500.paper', async (ctx, next) => {
-        await ctx.render(`${process.cwd()}/service/config/500`);
-        next();
+        await ctx.render(path.resolve(__dirname, './config/500'));
     });
     router.get('/404.paper', async (ctx, next) => {
-        await ctx.render(`${process.cwd()}/service/config/404`);
-        next();
+        await ctx.render(path.resolve(__dirname, './config/404'));
     });
     app.use(router.routes()).use(router.allowedMethods());
 };

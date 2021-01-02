@@ -5,6 +5,8 @@ const nunjucks = require('koa-nunjucks-2'); // 模板引擎
 const logger = require('koa-logger'); // log 日志
 const moment = require('moment');
 
+console.log('app')
+console.log(path.join(__dirname, '../../runtime'))
 app.use(nunjucks({ // 为 app.context 提供一个 render 方法
    ext: 'njk',
    path: path.join(__dirname, '../../runtime'),
