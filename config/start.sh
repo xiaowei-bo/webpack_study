@@ -5,9 +5,9 @@ cnpm i
 echo "$current_path"
 
 if [ "$(pm2 id myLife)" = "[]" ]; then
-    pm2 start ${current_path}/config/ecosystem.json
+    pm2 start service/app.js -i 4
 else
-    pm2 reload ${current_path}/config/ecosystem.json
+    pm2 reload service/app.js -i 4
 fi
 
 if [ $? -ne 0 ]; then
