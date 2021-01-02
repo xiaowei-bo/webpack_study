@@ -1,15 +1,10 @@
 import IndexMain from "./IndexMain.vue";
 import EditFood from "./EditFood.vue";
-import Vue from 'vue';
+import createVue from '@/js/base_vue.js';
 
-new Vue({
-    data: () => {
-        return {
-
-        }
-    },
+createVue({
     components: {
         IndexMain,
         EditFood
     }
-}).$mount("#app");
+});

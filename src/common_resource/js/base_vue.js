@@ -1,5 +1,8 @@
 import Vue from 'vue';
-import InitPage from '../components/InitPage/index.vue'
+import InitPage from '../components/InitPage/index.vue';
+import '@/scss/base.scss';
+dog.remHandler();
+dog.osInfo();
 export default function(options) {
     new Vue({
         data: () => {
