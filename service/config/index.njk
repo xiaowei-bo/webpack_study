@@ -71,11 +71,11 @@
         srcList.forEach((item) => {
             const arr = item.split('/');
             const obj = {
-                parent: arr[0],
+                parent: arr[2],
                 child: (function () {
                     let _child = '';
                     arr.forEach((item, index) => {
-                        if(index !== 0) {
+                        if(![0,1,2].includes(index)) {
                             _child += `${item}${index === arr.length - 1 ? '' : '/'}`
                         }
                     });
@@ -84,6 +84,7 @@
             };
             pageList.push(obj);
         });
+        console.log(pageList)
         const projectObj = {};
         pageList.forEach((item) => {
             if(!projectObj[item.parent]) {
