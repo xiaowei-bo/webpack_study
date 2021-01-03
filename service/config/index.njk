@@ -84,7 +84,6 @@
             };
             pageList.push(obj);
         });
-        console.log(pageList)
         const projectObj = {};
         pageList.forEach((item) => {
             if(!projectObj[item.parent]) {
@@ -108,7 +107,7 @@
             if(projectObj[project]) {
                 projectObj[project].forEach((item) => {
                     const aEl = document.createElement('a');
-                    aEl.href = project + '/' + item;
+                    aEl.href = '/views/' + project + '/' + item;
                     aEl.target = '_blank';
                     aEl.innerText = item;
                     aEl.title = item;
