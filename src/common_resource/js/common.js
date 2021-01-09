@@ -70,8 +70,9 @@ function remHandler(designWidth = 750) {
  * @param {String} text
  * @description 简易百度 TTS 文本转语音朗读
  */
-function bdAudio(text) {
-    const baseUrl = "http://tts.baidu.com/text2audio/text2audio?lan=zh&ie=UTF-8&spd=5&text=";
+function bdAudio(_text) {
+    const text = encodeURI(encodeURI(_text));
+    const baseUrl = "http://tts.baidu.com/text2audio?lan=zh&ie=UTF-8&spd=4&text=";
     let audio = document.getElementById('bd_audio') || null;
     if(audio) {
         console.log(audio.src);
