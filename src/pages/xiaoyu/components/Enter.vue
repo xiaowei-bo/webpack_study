@@ -22,8 +22,8 @@
 export default {
     data() {
         return {
-            fingerGif: 'https://uploader.shimo.im/f/SpVlP6JgS7TEu0Al.gif',
-            fingerPng: 'https://uploader.shimo.im/f/j5oYG1aM5uGN1aI8.png',
+            fingerGif: 'https://cdn-cnc.17xueba.com/s17/xuestatic/static/smp/activity/commitment_contracts/images/right_finger.gif',
+            fingerPng: 'https://cdn-cnc.17xueba.com/s17/xuestatic/static/smp/activity/commitment_contracts/images/right_finger.png',
             flag: false,
             timer: null,
             showText: true
