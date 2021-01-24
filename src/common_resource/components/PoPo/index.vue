@@ -22,11 +22,16 @@ export default {
                 randomColor: true, // 随机颜色
                 speed: 0.1, // 运动速度
                 icon: "star", // star / circle / snow / imgURL
-                hornOfStar: 4, // N角星
+                hornOfStar: 5 // N角星
             },
             itemList: [],
             angle: 0,
         };
+    },
+    methods: {
+        getRandom(min, max) {
+            return Math.floor(Math.random()*(max - min + 1) + min);
+        }
     },
     created() {
         const icon_xue =

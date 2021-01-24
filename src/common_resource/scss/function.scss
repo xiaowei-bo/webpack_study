@@ -1,3 +1,10 @@
 @function _px ($px) {
     @return $px / 100 + rem;
 }
+
+@mixin animate($name, $time, $cycle) {
+    -webkit-animation: $name $time $cycle;
+    -moz-animation: $name $time $cycle;
+    -o-animation: $name $time $cycle;
+    animation: $name $time $cycle;
+}

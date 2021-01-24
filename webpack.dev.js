@@ -10,7 +10,8 @@ const config = merge(common, {
     devServer: {
         contentBase: path.resolve(__dirname, 'dist'),
         port: 9001,
-        hot: true
+        hot: true,
+        open: true
     },
     output: {
         publicPath: '/'

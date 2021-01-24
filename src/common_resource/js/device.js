@@ -59,7 +59,7 @@ const platformList = [{
 
 export function getPlatformName() {
     const ua = navigator && navigator.userAgent.toLowerCase();
-    for(const { name, validator } in platformList) {
+    for(const { name, validator } of platformList) {
         if(validator(ua)) {
             return name;
         }
